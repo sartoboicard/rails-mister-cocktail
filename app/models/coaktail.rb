@@ -1,0 +1,2 @@
+class Coaktail < ApplicationRecord
+end
