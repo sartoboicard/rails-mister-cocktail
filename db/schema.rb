@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_15_171835) do
+ActiveRecord::Schema.define(version: 2020_08_15_171807) do
+
+  # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cocktails", force: :cascade do |t|
@@ -21,8 +23,8 @@ ActiveRecord::Schema.define(version: 2020_08_15_171835) do
 
   create_table "doses", force: :cascade do |t|
     t.string "description"
-    t.integer "cocktail_id", null: false
-    t.integer "ingredient_id", null: false
+    t.bigint "cocktail_id", null: false
+    t.bigint "ingredient_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cocktail_id"], name: "index_doses_on_cocktail_id"
